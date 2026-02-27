@@ -1,0 +1,39 @@
+<div class="menu-page">
+  <nav class="sidebar">
+    <ul class="section-list">
+      @for (section of menu.sections; track section.id) {
+        <li>
+          <button
+            type="button"
+            class="section-btn"
+            [class.active]="menu.currentSection().id === section.id"
+            (click)="menu.setCurrentSection(section.id)"
+          >
+            {{ section.name }}
+            @if (menu.currentSection().id === section.id) {
+              <span class="arrow">&gt;</span>
+            }
+          </button>
+        </li>
+      }
+    </ul>
+  </nav>
+  <div class="content">
+    <h2 class="content-title">{{ menu.currentSectionName() }}</h2>
+    <ul class="menu-list">
+      @for (item of menu.currentItems(); track item.id) {
+        <li class="menu-item">
+          <label>
+            <input
+              type="checkbox"
+              [checked]="menu.isSelected(menu.currentSection().id, item.id)"
+              (change)="menu.toggle(menu.currentSection().id, item.id)"
+            />
+            <span class="label">{{ item.label }}</span>
+            <span class="calories">{{ item.calories }} ккал</span>
+          </label>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

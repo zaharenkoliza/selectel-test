@@ -1,0 +1,10 @@
+<header class="header">
+  <a routerLink="/" class="logo">Книга калорий</a>
+  @if (isMenuPage) {
+    <div class="summary">
+      <span>Раздел: {{ menu.currentSectionName() }}</span>
+      <span>Выбрано пунктов: {{ menu.selectedCount() }}</span>
+      <span>Всего калорий: {{ menu.totalCalories() }}</span>
+    </div>
+  }
+</header>
