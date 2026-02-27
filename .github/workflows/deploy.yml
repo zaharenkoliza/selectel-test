@@ -19,7 +19,7 @@ jobs:
         run: npm ci
       
       - name: Build
-        run: npm run build --base-href /selectel-test/
+        run: npm run build -- --base-href /selectel-test/
       
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
