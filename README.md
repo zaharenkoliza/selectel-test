@@ -1,59 +1,45 @@
-# AngularApp
+# Книга калорий
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.22.
+Angular-приложение для учёта калорий. Позволяет выбирать блюда по разделам меню (завтрак, обед, ужин, напитки) и подсчитывать суммарную калорийность выбранных пунктов.
 
-## Development server
+## Стек
 
-To start a local development server, run:
+- Angular 19
+- TypeScript 5.7
+- Angular Router
 
-```bash
-ng serve
-```
+## Функциональность
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Главная страница** — приветствие и переход к меню
+- **Меню** — выбор блюд по категориям с указанием калорий на порцию
+- **Сводка** — в шапке отображаются: текущий раздел, количество выбранных пунктов и суммарные калории
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Установка и запуск
 
 ```bash
-ng generate --help
+npm install
+npm start
 ```
 
-## Building
+Откройте в браузере [http://localhost:4200/](http://localhost:4200/).
 
-To build the project run:
+## Сборка
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Артефакты сборки создаются в директории `dist/`.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Тесты
 
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
+## Структура проекта
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- `src/app/pages/` — страницы приложения (welcome, menu)
+- `src/app/components/` — переиспользуемые компоненты (header)
+- `src/app/services/` — сервисы (menu.service)
+- `src/app/data/` — данные меню (категории и блюда)
